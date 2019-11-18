@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
+</head>
+<body>
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#table">导航管理</a></li>
+                <li><a href="#inputs">添加导航</a></li>
+
+            </ul>
+<form>
+    <div class="form-group">
+        <label for="exampleInputEmail1">中文名字</label>
+        <input type="text" name="nname" class="form-control" id="exampleInputEmail1" placeholder="中文名字">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">英文名字</label>
+        <input type="text" name="ename" class="form-control" id="exampleInputPassword1" placeholder="英文名字">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword12">缩略图</label>
+        <input type="text" name="nthumb" class="form-control" id="exampleInputPassword12" placeholder="缩略图">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword13">排序</label>
+        <input type="number" name="sort" class="form-control" id="exampleInputPassword13" placeholder="排序">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword14">栏目模板</label>
+        <input type="text" name="ntpl" class="form-control" id="exampleInputPassword14" placeholder="栏目模板">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>
+</body>
+</html>
+<script>
+    $('form').on('submit',function (e) {
+        e.preventDefault();
+        let qe=$(this).serialize();
+        $.ajax({
+            type:'POST',
+            url:'navinsert.php',
+            dataType:'json',
+            data:qe,
+            context:this,
+            success(res){
+                if(res.code===200){
+                    this.reset();
+                }
+                else {
+                    alert('输入失败');
+                }
+            }
+
+        })
+
+    })
+</script>

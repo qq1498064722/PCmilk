@@ -1,0 +1,97 @@
+
+<link rel="stylesheet" href="../static/css/item.css">
+    <!-- banner -->
+    <div class="banner ">
+        <img src="../static/imgs/BannerFours.jpg " alt=" ">
+    </div>
+    <!-- item -->
+    <div class="big-box ">
+
+        <div class="title ">
+            <span><?php echo $res['gname'] ?>
+                <?php echo $res['gname'] ?>
+            </span>
+        </div>
+        <div class="row ">
+            <div class="lunbo swiper-container " style="margin: 0 ">
+                <!-- 轮播图开始 -->
+                <!-- <div class=" " id="ban "> -->
+                <div class="swiper-wrapper ">
+                    <?php
+$arr=explode(',',$res['banner']);
+$count=count($arr);
+for($i=0;$i<$count;$i++){
+  ?>
+                    <div class="lunbo swiper-slide ">
+
+                        <img src="<?php echo $arr[$i];?>" alt=" ">
+                    </div>
+                    <?php } ?>
+
+                </div>
+                <div class="swiper-pagination "></div>
+                <!-- </div> -->
+                <!-- 轮播图结束 -->
+            </div>
+
+            <div class="word ">
+                <div class="witem ">
+                    <div class="price ">
+                        <span>市场价：<?php echo $res['gprice'] ?></span>
+                    </div>
+                    <div class="price1 ">
+                        <span>零售价：</span>
+                        <span class="buy-price ">￥<?php echo $res['sale'] ?></span>
+                    </div>
+                    <div class="line "></div>
+                    <div class="state ">
+                        <span>库存状况：<?php echo $res['stock'] ?></span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="wenzi ">
+
+            <div class="jieshao "><span style="font-size: 22px ">商品介绍</span></div>
+            <div class="neirong1 "><span style="font-size:16px; color:rgb(128, 128,128); "><?php echo $res['detail'] ?></span>     </div>
+            <div style="position: relative ">&nbsp;</div>
+            <div class="neirong2 ">
+                <span style="font-size:16px; color:rgb(128, 128,128); "><?php echo $res['detail'] ?> </span>
+
+
+            </div>
+
+
+            </div>
+    </div>
+
+
+<div class="container" style="height: 50px;">
+    <span>上一篇：<?php echo $prevstr?></span>
+    <span style="float: right">下一篇：<?php echo $prevstr1?></span>
+</div>
+<!--尾栏 -->
+<?php
+require '../view/index/foot.html';
+?>
+        
+<script src="../static/js/swiper.min.js "></script>
+<!-- <script src="js/item.js "></script> -->
+<script src="../static/js/jQuery.js "></script>
+<script src="../static/js/animate.js "></script>
+
+<script src="../static/js/public.js "></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container', {
+        autoplay: true, //可选选项，自动滑动
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+        },
+    })
+</script>

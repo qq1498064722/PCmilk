@@ -1,0 +1,94 @@
+<?php
+    $sql="select * from nav where id='$id'";
+    $nav = $mysql->query($sql)->fetch_assoc();
+?>
+<link rel="stylesheet" href="../static/css/aboutus.css">
+
+
+    <!-- <div class="row "> -->
+    <div class="container ">
+        <div class="top-photo " style="padding-left:0;padding-right:0; ">
+            <img src="../static/imgs/BannerTwos.jpg " alt=" ">
+        </div>
+        <div class="lvyouzhishi ">
+            <div class="content ">
+                <span class="line "></span>
+                <div class="viv ">
+                    <span class="yanghu">
+                       <?php echo $nav['nname'];?>
+                    </span>
+                    <span class="know ">
+                        <?php echo $nav['ename'];?>
+                    </span>
+                </div>
+                <span class="line-right "></span>
+            </div>
+        </div>
+        <div class="xiangxijieshao ">
+            <div class="container ">
+                <div class="row ">
+                    <div class="left-wenzi col-md-6 col-lg-6 ">
+                        <span class="first ">“特仑苏”在蒙语中是“金牌牛奶”之意,也是蒙牛的一个牛奶品牌。它的产地—中国乳都核心区和林格尔，依托北纬40度左右、中温带暖湿季风性气候、世界公认的优质奶源带等一系列得天独厚的优势自然条件，提供了市场稀缺的高品质奶源。这里有蒙牛的澳亚国际牧场，有蒙牛的全球样板工厂，也有其全智能自动化控制中心与牛奶健康研究发展中心。
+                        </span>
+                        <div class="kb " style="height:25px; "></div>
+                        <span class="second ">由于采用了国际先进的加工技术，最大程度保证牛奶中营养成分，“特仑苏”成品经过严格的检测，包含了丰富的天然优质乳蛋白，每100克牛奶中蛋白质含量可以达到3.3克，比国家标准高13.8%，其整体营养含量更是高于普通牛奶，而且口味更香、更浓、更滑。而从产品定价看，因其品质高而产量有限，市场售价也是普通纯牛奶的2倍左右。据了解，作为一种高端牛奶制品，特仑苏在保证普通牛奶健康营养特性的基础上，突出的高 蛋白可以更好地维持人体正常的新陈代谢和各类物质在体内的输送，增强人体免疫力，保持人体内的酸碱平衡及水分的分布，对人体健康非常有益。
+                        </span>
+                        <div class="kb " style="height:25px; "></div>
+
+                    </div>
+                    <div class="right-photo col-md-4 col-lg-4 " style="padding-left:0;padding-right:0; ">
+                        <img src="../static/imgs/company2.jpg " alt=" ">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="weixiushifu ">
+            <div class="content ">
+                <span class="line "></span>
+                <div class="viv ">
+                    <span class="yanghu ">产品设计</span>
+                    <span class="know ">Master Team</span>
+                </div>
+                <span class="line-right "></span>
+            </div>
+        </div>
+        <div class="person ">
+
+            <div class="item col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+                <div class="person-photo ">
+                    <img src="../static/img/aboutus/dianzhang.jpg " alt=" ">
+                    <span style="display:block;margin-top:15px;color:rgb(0,0,0);font-size:26px;text-align:center; ">李大福</span>
+                    <span style="display:block;margin-top:2px;color:#F0443A;font-size:14px;text-align:center; ">店长</span>
+                </div>
+            </div>
+            <div class="item col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+                <div class="person-photo ">
+                    <img src="../static/img/aboutus/fudianzhang.jpg " alt=" ">
+                    <span style="display:block;margin-top:15px;color:rgb(0,0,0);font-size:26px;text-align:center; ">李大福</span>
+                    <span style="display:block;margin-top:2px;color:#F0443A;font-size:14px;text-align:center; ">副店长</span>
+                </div>
+            </div>
+            <div class="item col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+                <div class="person-photo ">
+                    <img src="../static/img/aboutus/weixiu1.jpg " alt=" ">
+                    <span style="display:block;margin-top:15px;color:rgb(0,0,0);font-size:26px;text-align:center; ">李大福</span>
+                    <span style="display:block;margin-top:2px;color:#F0443A;font-size:14px;text-align:center; ">摄影师傅1</span>
+                </div>
+            </div>
+            <div class="item col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+                <div class="person-photo ">
+                    <img src="../static/img/aboutus/weixiu2.jpg " alt=" ">
+                    <span style="display:block;margin-top:15px;color:rgb(0,0,0);font-size:26px;text-align:center; ">李大福</span>
+                    <span style="display:block;margin-top:2px;color:#F0443A;font-size:14px;text-align:center; ">摄影师傅2</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- </div> -->
+    </div>
+    <!--尾栏 -->
+<?php
+require '../view/index/foot.html';
+?>
